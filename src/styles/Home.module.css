@@ -1,23 +1,79 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+/* Marker */
+.container {
+  padding: 3px;
+  background-color: white;
+  text-align: center;
+  border: 1px solid #831616;
+  border-radius: 5px;
+  z-index: 1;
 }
 
-.description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
-  width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
+.container:hover {
+  transform: scale(1.1);
+  position: relative;
 }
 
+.containerSub {
+  background-color: #ef4e56;
+  border-radius: 3px;
+}
+
+.cityName {
+  color: white;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-weight: bold;
+  background-color: #ef4e56;
+  font-size: 14px;
+}
+
+.cityName:hover {
+  z-index: 3;
+}
+
+.allCnt {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.tooltip {
+  display: inline-block;
+  font-weight: bold;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-10%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+.tooltiptext {
+  display: none;
+  position: absolute;
+  width: 140px;
+  text-align: center;
+  left: 4.2em;
+  top: 1em;
+  border-radius: 5px;
+  padding: 2px;
+  font-size: 10px;
+  color: #6c6c6c;
+  animation: fadeInLeft 1s;
+  background: #ffffff;
+}
+
+.tooltip:hover .tooltiptext {
+  display: block;
+}
+
+/* d*/
 .description a {
   display: flex;
   justify-content: center;
@@ -97,7 +153,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
